@@ -35,4 +35,5 @@ scheduler = BlockingScheduler(timezone="Asia/Kuala_Lumpur")
 scheduler.add_job(send_poll, 'cron', hour=23, minute=0)  
 
 # Start
+send_poll()
 scheduler.start()
