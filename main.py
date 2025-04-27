@@ -17,7 +17,7 @@ def send_poll():
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
 
     question = f"Mutabaah Amal ({now})"
-    options = ["Mathurat Pagi", "Mathurat Petang", "1 muka Al-Quran sehari", "Sedekah 1 minggu skali", "Ana tak sempat/terlupa"]
+    options = ["Mathurat Pagi", "Mathurat Petang", "1 muka Al-Quran sehari", "Solat berjemaah", "Sedekah 1 minggu skali", "Ana tak sempat/terlupa"]
 
     payload = {
         "chat_id": CHAT_ID,
@@ -35,5 +35,4 @@ scheduler = BlockingScheduler(timezone="Asia/Kuala_Lumpur")
 scheduler.add_job(send_poll, 'cron', hour=23, minute=0)  
 
 # Start
-send_poll()
 scheduler.start()
