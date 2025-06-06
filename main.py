@@ -30,6 +30,9 @@ def send_poll():
     response = requests.post(url, json=payload)
     print(response.json())
 
+# ✅ Send poll immediately upon start
+send_poll()
+
 # Scheduler
 scheduler = BlockingScheduler(timezone="Asia/Kuala_Lumpur")
 scheduler.add_job(send_poll, 'cron', hour=23, minute=0)  
