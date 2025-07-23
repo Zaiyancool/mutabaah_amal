@@ -31,7 +31,7 @@ def send_poll():
     print(response.json())
 
 # ✅ Send poll immediately upon start
-send_poll()
+#send_poll()
 
 # Scheduler
 scheduler = BlockingScheduler(timezone="Asia/Kuala_Lumpur")
